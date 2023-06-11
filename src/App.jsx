@@ -14,6 +14,7 @@ const DEFAULT_VALUES={
   last_name:"",
   email:"",
   password:"",
+  "image_url":"",
 }
 
 function App() {

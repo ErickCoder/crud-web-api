@@ -1,5 +1,5 @@
 import React from "react";
-
+const imagenRandom= "/images/user.svg"
 const User = ({ user, deleteUser, changeShowModal, setIsUserToUpdate }) => {
   const handleClickDelete = () => {
     deleteUser(user.id);
@@ -29,9 +29,12 @@ const User = ({ user, deleteUser, changeShowModal, setIsUserToUpdate }) => {
           </span>
         </div>
 
-         <div className=" pb-4">
+         <div className=" pb-4 ">
          <p className="text-[#D3D3D3] pt-2"> FOTO</p>
-  <img className="h-20 w-30" src={user.image_url || "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/800px-User_icon_2.svg.png"} alt="" />
+         <div className="w-[50%]">
+         <img className=" rounded-md  " src={user.image_url || imagenRandom} alt="" />
+         </div>
+
 </div> 
 <hr className="pb-3 pt-2" />
         <section className="flex justify-end pb-0">

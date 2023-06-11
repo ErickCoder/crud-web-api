@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
+
+
 const ModalForm = ({
   isShowModal,
   createUser,
@@ -12,18 +14,24 @@ const ModalForm = ({
 
   const submit = (data) => {
     if (!data.birthday) data.birthday = null;
+   
+    if(!data.image_url){
+      data.image_url = null
+      } 
+
+
 
     if (isUserToUpdate) {
       updateUser(data, reset)
     } else {
       createUser(data,reset)
+      
     }
+
+
   };
 
-  const submit2 = (data) => {
-    if (!data.image_url) data.image_url = undefined;
-    createUser(data, reset);
-  }; 
+
 
   const handleCloseModal = () => {
     resetModalForm(reset)
@@ -47,7 +55,7 @@ const ModalForm = ({
       }`}
     >
       <form
-        onSubmit={handleSubmit(submit,submit2)}
+        onSubmit={handleSubmit(submit)}
         className="bg-white w-[280px] p-4 grid gap-6 relative"
       >
         <h3 className="font-bold text-3xl">
