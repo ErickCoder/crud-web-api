@@ -8,7 +8,8 @@ const ModalForm = ({
   createUser,
   isUserToUpdate,
   updateUser,
-  resetModalForm
+  resetModalForm,
+  showAlertCancel
 }) => {
   const { register, handleSubmit, reset } = useForm();
 
@@ -35,6 +36,7 @@ const ModalForm = ({
 
   const handleCloseModal = () => {
     resetModalForm(reset)
+    showAlertCancel()
   };
 
 

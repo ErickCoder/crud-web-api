@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import ModalForm from "./components/ModalForm";
 import axios from "axios";
-
+import swal from "sweetalert";
 import UserList from "./components/UserList";
 
 const BASE_URL = "https://users-crud.academlo.tech";
@@ -41,8 +41,12 @@ function App() {
       .then(()=>{
         getAllUsers()
         resetModalForm(reset)
+        changeShowModal()
+        showAlertUserCreated()
       })
-      .catch((err) => console.log(err));
+      .catch(() =>{
+      }) ;
+   
   };
 
 
@@ -55,8 +59,30 @@ function App() {
     const deleteUser=(id)=>{
       const url = BASE_URL + `/users/${id}/`;
 
-      axios.delete(url)
-      .then(()=> getAllUsers())
+      axios
+      .delete(url)
+      swal({
+        title: 'Eliminar',
+        text: "¿Estás seguro que deseas eliminar este usuario?",
+        icon: "warning",
+        buttons: ["No", "Sí"],
+      }).then(res=>{
+        if(res){
+          getAllUsers()
+          swal({
+            text: "Usuario eliminado con éxito",
+            icon: "success",
+        
+        })
+        
+        }else{
+          swal({
+            text: "Usuario no eliminado",
+            icon: "error",
+        
+        })
+        }
+      })
       .catch((err) => console.log(err));
     }
 
@@ -67,9 +93,42 @@ function App() {
       .then(()=>{
         getAllUsers()
         resetModalForm(reset)
+        showEditUserAlertSucces()
       })
       .catch((err) => console.log(err));
     }
+
+
+    const showAlertUserCreated =()=>{
+      swal({
+        title: '¡Bien hecho! Has logrado crear tu usuario con éxito.',
+        icon: "success",
+        button: 'Ok',
+        
+       
+      })
+    }
+
+    const showAlertCancel =()=>{
+      swal({
+        title: '¡Acción cancelada!',
+        icon: "error",
+        button: 'Ok',
+        
+       
+      })
+    }
+
+    const showEditUserAlertSucces = () => {
+      swal({
+        title: 'Usuario editado con éxito',
+        icon: "success",
+        button: 'OK',
+      })
+    }
+
+
+
 
   useEffect(() => {
     getAllUsers();
@@ -84,6 +143,7 @@ function App() {
         isUserToUpdate={isUserToUpdate}
         updateUser={updateUser}
         resetModalForm={ resetModalForm}
+        showAlertCancel={showAlertCancel}
       />
 
       <UserList 
@@ -91,6 +151,7 @@ function App() {
       deleteUser={deleteUser} 
       changeShowModal={changeShowModal}
         setIsUserToUpdate={setIsUserToUpdate}
+        
       />
     </main>
   );

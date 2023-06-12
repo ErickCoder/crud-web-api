@@ -1,5 +1,8 @@
 import React from "react";
-const imagenRandom= "/images/user.svg"
+const imagenRandom= "/images/user-icon.png"
+
+
+
 const User = ({ user, deleteUser, changeShowModal, setIsUserToUpdate }) => {
   const handleClickDelete = () => {
     deleteUser(user.id);
@@ -31,8 +34,8 @@ const User = ({ user, deleteUser, changeShowModal, setIsUserToUpdate }) => {
 
          <div className=" pb-4 ">
          <p className="text-[#D3D3D3] pt-2"> FOTO</p>
-         <div className="w-[50%]">
-         <img className=" rounded-md  " src={user.image_url || imagenRandom} alt="" />
+         <div className="">
+         <img className="rounded-lg w-[110px] h-[80px]  " src={user.image_url || imagenRandom} alt="" />
          </div>
 
 </div> 
