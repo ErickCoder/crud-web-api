@@ -71,7 +71,7 @@ const UserForm = ({
           <input
             placeholder="Ingresa tu nombre..."
             type="text"
-            className="bg-gray-100 outline-primary p-2 "
+            className="bg-gray-100 outline-hover p-2"
             {...register("first_name")}
           />
         </div>
@@ -82,7 +82,7 @@ const UserForm = ({
           <input
             placeholder="Ingresa tu apellido..."
             type="text"
-            className="bg-gray-100 outline-primary p-2"
+            className="bg-gray-100 outline-hover p-2"
             {...register("last_name")}
           />
         </div>
@@ -93,7 +93,7 @@ const UserForm = ({
           <input
             placeholder="Ingresa tu correo..."
             type="text"
-            className="bg-gray-100 outline-primary p-2"
+            className="bg-gray-100 outline-hover p-2"
             {...register("email")}
           />
         </div>
@@ -104,7 +104,7 @@ const UserForm = ({
           <input
             placeholder="Ingresa tu contraseña..."
             type="password"
-            className="bg-gray-100 outline-primary p-2"
+            className="bg-gray-100 outline-hover p-2"
             {...register("password")}
           />
         </div>
@@ -127,7 +127,7 @@ const UserForm = ({
           <input
             placeholder="Ingresa URL de imagen..."
             type="text"
-            className="bg-gray-100 outline-primary p-2"
+            className="bg-gray-100 outline-hover p-2"
             {...register("image_url")}
           />
         </div> 
@@ -139,7 +139,7 @@ const UserForm = ({
           <i className="bx bx-x"></i>
         </button>
 
-        <button className="btn-primary p-2 hover:bg-hover transition duration-300 ease-in hover:text-black rounded-md font-medium">
+        <button className="btn-primary p-2 hover:bg-hover transition duration-300 ease-in hover:text-white hover:font-medium rounded-md">
           {isUserToUpdate ? "Guardar cambios" : "Agregar nuevo usuario"}
         </button>
       </form>

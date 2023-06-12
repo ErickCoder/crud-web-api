@@ -6,6 +6,7 @@ import axios from "axios";
 import swal from "sweetalert";
 import UserList from "./components/UserList";
 import UserForm from "./components/UserForm";
+import Footer from "./components/Footer";
 
 const BASE_URL = "https://users-crud.academlo.tech";
 
@@ -136,7 +137,7 @@ function App() {
   }, []);
 
   return (
-    <main className='font-["Roboto"] pb-60'>
+    <main className='font-["Roboto"] '>
       <Header changeShowModal={changeShowModal} />
       <UserForm
         isShowModal={isShowModal}
@@ -154,6 +155,8 @@ function App() {
         setIsUserToUpdate={setIsUserToUpdate}
         
       />
+
+      <Footer/>
     </main>
   );
 }

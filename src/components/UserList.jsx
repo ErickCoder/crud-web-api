@@ -3,7 +3,7 @@ import User from "./User";
 
 const UserList = ({ users, deleteUser, changeShowModal, setIsUserToUpdate,  }) => {
   return (
-    <section className="grid gap-8 grid-cols-[repeat(auto-fill,_300px)] justify-center max-w-[1024px] mx-auto pt-16">
+    <section className="grid gap-8 grid-cols-[repeat(auto-fill,_300px)] justify-center max-w-[1024px] mx-auto pt-16 pb-44">
       {users.map((user) => (
         <User
           key={user.id}
