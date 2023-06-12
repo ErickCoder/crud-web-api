@@ -47,14 +47,14 @@ const User = ({ user, deleteUser, changeShowModal, setIsUserToUpdate }) => {
           
          </div>
          
-          <div className="bg-secundary text-white p-2 text-lg rounded pl-3 pr-3 mr-3">
+          <div className="bg-primary  text-white p-2 text-lg rounded pl-3 pr-3 mr-3 hover:bg-secundary trasition duration-300 ease-in">
         
             <button onClick={handleClickDelete}>
               <i className="bx bxs-trash"></i>
             </button>
           </div>
 
-          <div className="bg-[#F6F6F6] border-2 border-[#BDBDBD] text-[#BDBDBD] p-2 rounded  pl-3 pr-3">
+          <div className="bg-[#F6F6F6] border-2 border-primary  text-primary p-2 rounded  pl-3 pr-3 hover:border-[#BDBDBD] hover:text-[#bdbdbd] trasition duration-300 ease-in cursor-pointer">
             <button onClick={handleClickUpdate}>
               <i className="bx bxs-pencil"></i>
             </button>

@@ -10,7 +10,7 @@ const Header = ({ changeShowModal }) => {
       <h1 className="font-bold text-2xl">Usuarios</h1>
       <button
         onClick={handleClickShowModal}
-        className="btn-primary flex items-center"
+        className="btn-primary flex items-center hover:bg-hover transition duration-300 ease-in hover:text-black rounded-md"
       >
         <i className="bx bx-plus"></i>Crear nuevo usuario
       </button>

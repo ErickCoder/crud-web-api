@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 
 
-const ModalForm = ({
+const UserForm = ({
   isShowModal,
   createUser,
   isUserToUpdate,
@@ -71,7 +71,7 @@ const ModalForm = ({
           <input
             placeholder="Ingresa tu nombre..."
             type="text"
-            className="bg-gray-100 outline-none p-2"
+            className="bg-gray-100 outline-primary p-2 "
             {...register("first_name")}
           />
         </div>
@@ -82,7 +82,7 @@ const ModalForm = ({
           <input
             placeholder="Ingresa tu apellido..."
             type="text"
-            className="bg-gray-100 outline-none p-2"
+            className="bg-gray-100 outline-primary p-2"
             {...register("last_name")}
           />
         </div>
@@ -93,7 +93,7 @@ const ModalForm = ({
           <input
             placeholder="Ingresa tu correo..."
             type="text"
-            className="bg-gray-100 outline-none p-2"
+            className="bg-gray-100 outline-primary p-2"
             {...register("email")}
           />
         </div>
@@ -104,7 +104,7 @@ const ModalForm = ({
           <input
             placeholder="Ingresa tu contraseña..."
             type="password"
-            className="bg-gray-100 outline-none p-2"
+            className="bg-gray-100 outline-primary p-2"
             {...register("password")}
           />
         </div>
@@ -127,19 +127,19 @@ const ModalForm = ({
           <input
             placeholder="Ingresa URL de imagen..."
             type="text"
-            className="bg-gray-100 outline-none p-2"
+            className="bg-gray-100 outline-primary p-2"
             {...register("image_url")}
           />
         </div> 
 
         <button
           type="button" onClick={handleCloseModal}
-          className="absolute top-2 right-2 text-2xl hover:text-secundary"
+          className="absolute top-2 right-2 text-2xl hover:text-hover"
         >
           <i className="bx bx-x"></i>
         </button>
 
-        <button className="btn-primary p-2 ">
+        <button className="btn-primary p-2 hover:bg-hover transition duration-300 ease-in hover:text-black rounded-md font-medium">
           {isUserToUpdate ? "Guardar cambios" : "Agregar nuevo usuario"}
         </button>
       </form>
@@ -147,4 +147,4 @@ const ModalForm = ({
   );
 };
 
-export default ModalForm;
+export default UserForm;

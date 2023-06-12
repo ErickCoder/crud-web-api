@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import ModalForm from "./components/ModalForm";
+
 import axios from "axios";
 import swal from "sweetalert";
 import UserList from "./components/UserList";
+import UserForm from "./components/UserForm";
 
 const BASE_URL = "https://users-crud.academlo.tech";
 
@@ -137,7 +138,7 @@ function App() {
   return (
     <main className='font-["Roboto"] pb-60'>
       <Header changeShowModal={changeShowModal} />
-      <ModalForm
+      <UserForm
         isShowModal={isShowModal}
         createUser={createUser}
         isUserToUpdate={isUserToUpdate}
