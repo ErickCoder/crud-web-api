@@ -1,5 +1,5 @@
 import React from "react";
-const imagenRandom= "/images/user.png"
+const imagenRandom= "/images/user2.png"
 
 
 
