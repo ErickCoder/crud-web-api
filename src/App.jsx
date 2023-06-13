@@ -6,7 +6,7 @@ import axios from "axios";
 import swal from "sweetalert";
 import UserList from "./components/UserList";
 import UserForm from "./components/UserForm";
-
+import "./components/Styles/Swal.css";
 
 const BASE_URL = "https://users-crud.academlo.tech";
 
@@ -61,22 +61,28 @@ function App() {
     const deleteUser=(id)=>{
       const url = BASE_URL + `/users/${id}/`;
 
-      axios
-      .delete(url)
       swal({
         title: 'Eliminar',
         text: "¿Estás seguro que deseas eliminar este usuario?",
         icon: "warning",
         buttons: ["No", "Sí"],
-      }).then(res=>{
+      })
+
+      .then(res=>{
         if(res){
           getAllUsers()
-          swal({
-            text: "Usuario eliminado con éxito",
-            icon: "success",
-        
-        })
-        
+          axios
+          .delete(url)
+          .then(()=>{
+            getAllUsers()
+            swal({
+              text: "Usuario eliminado con éxito",
+              icon: "success",
+          
+          })
+          })
+   
+        .catch((err)=>console.log(err))
         }else{
           swal({
             text: "Usuario no eliminado",

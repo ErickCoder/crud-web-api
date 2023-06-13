@@ -1,5 +1,5 @@
 import React from "react";
-const imagenRandom= "/images/user-icon.png"
+const imagenRandom= "/images/user.png"
 
 
 
@@ -35,7 +35,7 @@ const User = ({ user, deleteUser, changeShowModal, setIsUserToUpdate }) => {
          <div className=" pb-4 ">
          <p className="text-[#D3D3D3] pt-2"> FOTO</p>
          <div className="">
-         <img className="rounded-lg w-[110px] h-[80px]  " src={user.image_url || imagenRandom} alt="" />
+         <img className="rounded-lg w-[110px] h-[100px]  " src={user.image_url || imagenRandom} alt="" />
          </div>
 
 </div> 
