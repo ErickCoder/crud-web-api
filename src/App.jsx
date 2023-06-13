@@ -6,7 +6,7 @@ import axios from "axios";
 import swal from "sweetalert";
 import UserList from "./components/UserList";
 import UserForm from "./components/UserForm";
-import Footer from "./components/Footer";
+
 
 const BASE_URL = "https://users-crud.academlo.tech";
 
@@ -156,7 +156,7 @@ function App() {
         
       />
 
-      <Footer/>
+    
     </main>
   );
 }
